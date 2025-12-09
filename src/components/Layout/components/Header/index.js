@@ -9,7 +9,6 @@ import {
     faEarthAmerica,
     faCircleQuestion,
     faKeyboard,
-    faCloudUpload,
     faUser,
     faGear,
     faCoins,
@@ -25,6 +24,8 @@ import styles from "./Header.module.scss";
 import images from "~/assets/images";
 import AccountItem from "~/components/AccountItem";
 import Menu from "~/components/Popper/Menu";
+import { NotificationIcon, SendIcon, UploadIcon } from "~/components/Icons";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 
@@ -142,7 +143,17 @@ function Header() {
                         <>
                             <Tippy delay={200} content="Upload video" placement="bottom">
                                 <button className={cx("action-btn")}>
-                                    <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon>
+                                    <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={200} content="Send messages" placement="bottom">
+                                <button className={cx("action-btn")}>
+                                    <SendIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={200} content="Notification" placement="bottom">
+                                <button className={cx("action-btn")}>
+                                    <NotificationIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -155,8 +166,8 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
-                                src="https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            <Image
+                                src="https:f//plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 className={cx("user-avatar")}
                                 alt="NguyenVanA"
                             />
