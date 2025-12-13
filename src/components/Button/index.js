@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import classNames from "classnames/bind";
 import styles from "./Button.module.scss";
 import { Link } from "react-router-dom";
@@ -48,10 +49,14 @@ function Button({
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx("icon")}>{leftIcon}</span>}
-            <span className={cx('title')}>{children}</span>
+            <span className={cx("title")}>{children}</span>
             {rightIcon && <span className={cx("icon")}>{rightIcon}</span>}
         </Comp>
     );
 }
+
+Button.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default Button;
